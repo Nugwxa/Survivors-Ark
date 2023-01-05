@@ -8,13 +8,13 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;                                     // Player's current health;
     public Slider healthSlider;                                   // Player's health UI;
     public Image damageImage;                                     // image to indicate when the player has been hit;
-    public UserInput userInput;                                   // "UserInput" script
+    public UserInput userInput;                                   // "UserInput" script;
     public AudioClip deathClip;                                   // Sound that plays when the player dies;
     public float flashSpeed = 5f;                                 // Speed at which damage image is shown;
-    public Color flashColour = new Color(2f, 0f, 0f, 0.1f);
+    public Color flashColour = new Color(2f, 0f, 0f, 0.1f);       // Damage image color;
 
-    public GameObject pauseMenu;
-    public GameObject gameController;
+    public GameObject pauseMenu;                                  // Pause menu UI;
+    public GameObject gameController;                             // Game controller script;
 
 
     Animator anim;
@@ -29,37 +29,37 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<UserInput>();
-        currentHealth = startingHealth;
+        currentHealth = startingHealth;                           // Set the player's health to full at the start of the game;
 	}
 	
 
 	void Update ()
     {
-        if (damaged)
+        if (damaged)                                               // If player is touched;
         {
-            damageImage.color = flashColour;
+            damageImage.color = flashColour;                       // Flash red;
         }
         else
         {
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime); // Clear screen;
         }
         damaged = false;
 	}
 
 
-    public void TakeDamage (int amount)
+    public void TakeDamage (int amount)            // For when the player is touched;
     {
-        damaged = true;
+        damaged = true;                            // Trigger Damage Image;
 
-        currentHealth -= amount;
+        currentHealth -= amount;                   // Remove damage amount from current health;
 
-        healthSlider.value = currentHealth;
+        healthSlider.value = currentHealth;        // Update the health UI to display the player's current health;
 
-        playerAudio.Play();
+        playerAudio.Play();                        // Play hurt clip;
 
-        if(currentHealth <= 0 && !isDead)
+        if(currentHealth <= 0 && !isDead)          // If the player dies
         {
-            Death();
+            Death();                               // Trigger death sequence
         }
     }
 
