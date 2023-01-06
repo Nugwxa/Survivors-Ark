@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,9 +12,9 @@ public class gameOverPressTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Submit"))
+        if (Input.GetButton("Submit"))                         // If player presses enter;
         {
-            ReloadLevel();
+            ReloadLevel();                                     // Restart level
         }     
     }
 
@@ -25,13 +25,13 @@ public class gameOverPressTransition : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        transition.SetTrigger("Start");
+        transition.SetTrigger("Start");                        // Trigger animation;
 
         //Debug.Log("WE GOOD");
 
-        yield return new WaitForSeconds(TransitionTime);
+        yield return new WaitForSeconds(TransitionTime);       // Wait for animation to finish playing;
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(levelIndex);                    // Restart level;
 
 
     }
