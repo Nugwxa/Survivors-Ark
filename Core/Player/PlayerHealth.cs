@@ -70,14 +70,14 @@ public class PlayerHealth : MonoBehaviour
 
         //playerShooting.DisableEffects ();
 
-        anim.SetTrigger("Die");
+        anim.SetTrigger("Die");                    // Play idle animation;
 
-        playerAudio.clip = deathClip;
-        playerAudio.Play();
-        pauseMenu.SetActive(false);
-        gameController.SetActive(false);
+        playerAudio.clip = deathClip;              
+        playerAudio.Play();                        // Play death clip;
+        pauseMenu.SetActive(false);                // Disable pause menu UI;
+        gameController.SetActive(false);           // Disable enemy/wave spawning;
 
-        playerMovement.enabled = false;
-        userInput.enabled = false;
+        playerMovement.enabled = false;            // Disable the player's movement script to Prevent them from moving while dead;
+        userInput.enabled = false;                 // Disable the "userInput" script to prevent the player from looking around while dead;
     }
 }
