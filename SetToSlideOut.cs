@@ -13,13 +13,7 @@ public class SetToSlideOut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Slide.SetTrigger("SlideOut");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Slide.SetTrigger("SlideOut");         //Trigger Animation
     }
 
     
