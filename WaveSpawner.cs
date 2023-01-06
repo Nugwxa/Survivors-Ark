@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,18 +9,18 @@ public class WaveSpawner : MonoBehaviour {
     [System.Serializable]
     public class Wave
     {
-        public string name;
+        public string name; 
         public Transform enemy;
         public int count;
         public float rate;
     }
 
-    public PlayerHealth playerHealth;
+    public PlayerHealth playerHealth;         // "PlayerHealth" script;
     public Text WaveText;
     public Text WaveText2;
     int WaveNumber;
     public Animator WaveAnim;
-    public int HealthIncrease = 10;
+    public int HealthIncrease = 10;            // Health Boost
     public Transform[] grenadePoints;
     public int NumberOfBombs = 4;
     public GameObject Bomb1;
