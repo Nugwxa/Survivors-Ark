@@ -24,13 +24,13 @@ public class EnemyHealth : MonoBehaviour
 
 	void Awake ()
     {
-        StartParticle.SetActive(true);
+        StartParticle.SetActive(true);                // Play particle effect;
         anim = GetComponent <Animator> ();
         enemyAudio = GetComponent <AudioSource> ();
 
         capsuleCollider = GetComponent <CapsuleCollider> ();
 
-        currentHealth = startingHealth;
+        currentHealth = startingHealth;               // Set health to starting health(100);
 	}
 	
 	
@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
     {
 		if(isSinking)
         {
-            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);  // Send eneny below the terrain;
         }
 	}
 
@@ -50,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
 
         enemyAudio.Play();
 
-        currentHealth -= amount;
+        currentHealth -= amount;  // Take damage amount from health;
 
         if (currentHealth <= 0)
         {
