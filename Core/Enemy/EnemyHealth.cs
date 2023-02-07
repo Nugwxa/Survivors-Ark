@@ -84,9 +84,9 @@ public class EnemyHealth : MonoBehaviour
         capsuleCollider.isTrigger = true;
 
         anim.SetTrigger("Dead");
-        GetComponent<NavMeshAgent>().enabled = false;
-        GetComponent<SphereCollider>().enabled = false;
-        GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;      // Disable the enemy's NavMesh so it wont be able to navigate;
+        GetComponent<SphereCollider>().enabled = false;    // Disable the sphere collider so the enemy wont be able to attack;
+        GetComponent<CapsuleCollider>().enabled = false;   // Disable the capsule collider so the enemy wont collide with anything;
         GetComponent<Rigidbody>().isKinematic = true;
 
         ScoreManagerLevel001.score += scoreValue;
