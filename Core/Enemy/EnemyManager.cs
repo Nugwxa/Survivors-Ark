@@ -21,8 +21,8 @@ public class EnemyManager : MonoBehaviour
             return;
         }
 
-        int spawnPointIndex = Random.Range(0, spawnPoints.Length);      // Spawn Randomly
+        int spawnPointIndex = Random.Range(0, spawnPoints.Length);      // Spawn Randomly;
 
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation); // Create an enemy object at spawn point;
 	}
 }
