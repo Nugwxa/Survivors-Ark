@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
 
         playerAudio.Play();                        // Play hurt clip;
 
-        if(currentHealth <= 0 && !isDead)          // If the player dies
+        if(currentHealth <= 0 && !isDead)          // If the player's health reaches 0 (i.e. player is dead)
         {
             Death();                               // Trigger death sequence
         }
