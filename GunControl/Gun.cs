@@ -1,3 +1,7 @@
+using UnityEngine;
+
+public class Gun : MonoBehaviour {
+
 // Damage, range, and fire rate for the gun
 public float damage = 10f;
 public float range = 100f;
@@ -50,4 +54,6 @@ void Shoot()
         // Log the name of the object that was hit
         Debug.Log(hit.transform.name);
     }
+}
+	
 }
